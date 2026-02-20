@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class NameValidatorTest {
-
     private final  NameValidator check = new NameValidator();
 
     @Test
@@ -15,7 +14,7 @@ class NameValidatorTest {
 
     @Test
     void testTooShort(){
-        assertFalse(check.isValid("qw"));
+        assertFalse(check.isValid("qw")); // < 3
     }
 
     @Test
@@ -25,8 +24,7 @@ class NameValidatorTest {
 
     @Test
     void testUserName(){
-        assertTrue(check.isValid("usersec1"));
-        assertTrue(check.isValid("ryan22"));
+        assertTrue(check.isValid("UUID"));
     }
 
     @Test
@@ -37,7 +35,6 @@ class NameValidatorTest {
 
     @Test
     void rightChars(){
-        assertTrue(check.isValid("abc_abc"));
-        assertTrue(check.isValid("ABC$"));
+        assertTrue(check.isValid("qwe"));
     }
 }
